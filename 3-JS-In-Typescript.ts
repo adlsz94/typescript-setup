@@ -1,4 +1,4 @@
-console.log('Hello world')
+console.log('Hello Typescript')
 
 /**
  *TODO: Execute o comando abaixo no terminal:
