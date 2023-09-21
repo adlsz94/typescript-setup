@@ -1,3 +1,4 @@
+// ts is a superset of JS
 console.log('Hello Typescript')
 
 /**

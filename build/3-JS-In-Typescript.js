@@ -1,3 +1,5 @@
+"use strict";
+// ts is a superset of JS
 console.log('Hello Typescript');
 /**
  *TODO: Execute o comando abaixo no terminal:

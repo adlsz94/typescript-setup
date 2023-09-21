@@ -1,3 +1,4 @@
+"use strict";
 /**
  * TODO:See the links:
  *
@@ -11,6 +12,13 @@ console.log(grade) // return error of type
 
 When you specify a variable any type you can´t change
 its type on typescript. */
-var grade = 95; // type number
+let grade = 95; // type number
 grade = 88;
 console.log(grade);
+/**
+ * Install ts-node to run typescript file:
+ *
+ * Install globally
+ * npm install -g ts-node
+ *
+ */ 
