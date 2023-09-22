@@ -14,10 +14,11 @@
  * The example below does not use any and will throw an error:
  * Example without any
  */
-/*  let u = true;
- u = "string"; // Error: Type 'string' is not assignable to type 'boolean'.
- Math.round(u); // Error: Argument of type 'boolean' is not assignable to parameter of type 'number' */
-// Example with any
+/*
+*  let u = true;
+* u = "string"; // Error: Type 'string' is not assignable to type 'boolean'.
+* Math.round(u); // Error: Argument of type 'boolean' is not assignable to parameter of type 'number' */
+//? Example with any
 let v = true;
 v = "string"; // no error as it can be "any" type
 console.log(v);

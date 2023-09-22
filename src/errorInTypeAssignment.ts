@@ -11,7 +11,7 @@
  */
 
 let firstPet: string = 'Popy' // type string
-/* firstPet = 5   type number is not assignable to type string
+/* firstPet = 5 // type number is not assignable to type string
 
  typescript will throw an error if data types don`t match */
 
