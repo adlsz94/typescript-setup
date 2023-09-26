@@ -5,6 +5,8 @@
  * 
  * https://www.w3schools.com/typescript/typescript_object_types.php
  * 
+ * https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types
+ * 
  *? Optional Properties
  * 
  * Optional properties are properties that don't have to be defined in the object definition.
@@ -29,4 +31,4 @@
     type: 'Toyota'
  }
  car2.mileage = 2000
- console.log(car2)
+ console.log(car2) // return { type: 'Toyota', mileage: 2000 }

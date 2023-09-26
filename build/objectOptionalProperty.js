@@ -25,4 +25,4 @@ const car2 = {
     type: 'Toyota'
 };
 car2.mileage = 2000;
-console.log(car2);
+console.log(car2); // return { type: 'Toyota', mileage: 2000 }
