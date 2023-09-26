@@ -43,7 +43,7 @@ console.log(car2); // return { type: 'Toyota', mileage: 2000 }
 * console.log(printName)
 */
 /**
- * In Javascript, if you access a proterty that doesn't, you'll get the value 'undefined'
+ * In Javascript, if you access a property that doesn't, you'll get the value 'undefined'
  * rather than a runtime error. Because of this, when you read from an optional property,
  * you'll have to check for 'undefined before using it.
  ** link: https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types
