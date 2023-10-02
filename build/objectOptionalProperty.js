@@ -56,7 +56,7 @@ function printName(obj) {
         console.log(obj.first, obj.last.toUpperCase());
     }
     // A safe alternative using modern Javascript syntax:
-    console.log(obj.first, (_a = obj.last) === null || _a === void 0 ? void 0 : _a.toUpperCase());
+    console.log(obj.first, (_a = obj.last) === null || _a === void 0 ? void 0 : _a.toUpperCase()); // returns Alice ALISSON
 }
-printName({ first: "Bob" });
-printName({ first: "Alice", last: "Alisson" });
+printName({ first: "Bob" }); // returns Bob undefined
+printName({ first: "Alice", last: "Alisson" }); // returns Alice ALISSON

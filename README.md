@@ -16,6 +16,8 @@ $ npm install -g typescript
 
 [TypeScript Getting Started] (<https://www.w3schools.com/typescript/typescript_getstarted.php/>)
 
+[Complete Typescript in under 5 hours] (<https://youtu.be/ZchBYjHFCC4?si=wTTrcFI4LfTOLQ5k/>)
+
 ## Run typescript file
 
 ### install ts-node gloally to run typescript files

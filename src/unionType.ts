@@ -34,7 +34,7 @@ printId('202') // return You ID is: 202
 //! error: Argument of type '{ myId: number; }' is not assignable to parameter of type 'string | number'.
 
 /**
- * Working with Union Types
+ *? Working with Union Types
  * 
  * It's easy to provide a value matching a union type - simply provide a type matching
  * any of the union's members. If you have a value of a union type, how do you work with it?
@@ -49,7 +49,7 @@ printId('202') // return You ID is: 202
 } */
 /**
  *! error: Property 'toUppercase' does not exist on type 'string | number'.
- *! Property 'toUppercase' does not exist on type 'string'.
+ *! Property 'toUppercase' does not exist on type 'number'.
  */
 
 /**
@@ -73,3 +73,46 @@ console.log(printId1(150))   // return You ID is: 150
                              // undefined
 console.log(printId1('200')) // return Your ID of type string is: 200
                              // undefined
+
+// Another example is to use a function like Array.isArray:
+
+function welcomePeople( x: string[] | string ) {
+    if (Array.isArray(x)) {
+        // Here, 'x' is of type'string[]'
+        // TODO: See the link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+        console.log('Hello, '+x.join(' and')) 
+    } else {
+        // Here, 'x' is of type 'string'
+        console.log( 'Welcome '+ x )
+    }
+}
+welcomePeople( 'Developer Javascript and Typescript' ) // undefined
+                                                       // Welcome Developer Javascript and Typescript
+welcomePeople([ 'Developer Javascript', ' Typescript' ]) // Hello, Developer Javascript and Typescript
+
+/**
+ * Notice that in the 'else' branch, we don't need to do anything special - if 'x' wasn't a 'string[]',
+ * then it must have been a 'string'.
+ * 
+ * Sometimes you'll have a union where all the members have something in common.
+ * For example, both arrays and strings have a 'slice' method. 
+ * If every member in a union has a property in common, you can use that property without narrowing: 
+ */
+
+// Return type is inferred as number[] | string
+function getFirstThree(x: number[] | string ) {
+    // TODO: See the link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+    return x.slice(0, 3)
+}
+console.log(getFirstThree([1, 2, 3, 4])) // return [ 1, 2, 3 ]
+
+console.log(getFirstThree('55')) // return 55
+
+/**
+ * It might be confusing that a union of types appears to have the intersection of those types’ properties. 
+ * This is not an accident - the name union comes from type theory. The union number | string is composed by 
+ * taking the union of the values from each type. Notice that given two sets with corresponding facts about each set, 
+ * only the intersection of those facts applies to the union of the sets themselves. 
+ * For example, if we had a room of tall people wearing hats, and another room of Spanish speakers wearing hats, 
+ * after combining those rooms, the only thing we know about every person is that they must be wearing a hat.
+ */
