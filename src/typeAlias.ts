@@ -1,14 +1,16 @@
 /**
  *? Typescript Type Aliases
  * 
- * TODO: See the link:
+ * TODO: See the links:
  * 
  ** https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases
  * 
+ ** https://www.w3schools.com/typescript/typescript_aliases_and_interfaces.php
+ * 
  *? Type Aliases
  * 
- * We’ve been using object types and union types by writing them directly in type annotations. 
- * This is convenient, but it’s common to want to use the same type more than once and refer to it by a single name.
+ * We have been using object types and union types by writing them directly in type annotations. 
+ * This is convenient, but it is common to want to use the same type more than once and refer to it by a single name.
  * A type alias is exactly that - a name for any type. The syntax for a type alias is:
  * 
  * @alias Point
@@ -54,3 +56,34 @@ printCoord1({x: 100, y: 120}) // The coordinates's x value is 100
 * // Can still be re-assigned with a string though
 * userInput = "new input" 
 */
+
+/**
+ * TypeScript allows types to be defined separately from the variables that use them.
+ * Aliases and Interfaces allows types to be easily shared between different variables/objects.
+ * 
+ *? TYPE Aliases
+ * 
+ * Type Aliases allow defining types with a custom name (an Alias).
+ * Type Aliases can be used for primitives like string or more complex types such as objects and arrays:
+ * Example
+ */
+type CarYear = number
+type CarType = string
+type CarModel = string
+type Car = {
+    year: CarYear,
+    type: CarType,
+    model: CarModel
+}
+
+const carYear: CarYear = 2001
+const carType: CarType = "Toyota"
+const carModel: CarModel = "Corolla"
+const car3: Car = {
+    year: carYear,
+    type: carType,
+    model: carModel
+}
+
+console.log(car3) // { year: 2001, type: 'Toyota', model: 'Corolla' }
+
