@@ -34,7 +34,7 @@ import ts from 'typescript'
  interface Animal {
     name: string;
  }
- interface Bear extends Animal {
+ interface Bear extends Animal { // Inherited from Animal
     honey: boolean;
  }
 
@@ -50,7 +50,7 @@ bear.name  = "Pufo"
 bear.honey = false;
 console.log(bear); // { name: 'Pufo', honey: false }
 
-// Extending a type via intersection
+// Extending a type via intersection &
 
 type Animal1 = {
     name: string;
@@ -73,13 +73,36 @@ console.log(bear1); // { name: 'Pefi', honey: true }
 
 // Adding new fields to an existing interface
 
-interface Window {
-    title: string
+interface Car {
+    brand: string
 }
 
-/* interface Window {
-    ts: TypeScriptAPI;
+interface Car {
+    model: string
 }
 
-const src = 'const a = "Hello World"'
-window.ts.transpileModule(src, {} ) */
+function getCar(): Car {
+    return {
+        brand: 'Ford',
+        model: 'Mustang'
+    }
+}
+
+const car = getCar()
+car.brand = 'Volkswagen'
+car.model =  'Gol'
+console.log(car) // return { brand: 'Volkswagen', model: 'Gol' }
+
+//! A type cannot be changed after being created
+
+/**
+ **  type Car1 = {
+ **      brand: string
+ ** }
+ * 
+ **  type Car1 = {
+ **     model:
+ ** } 
+ */
+
+//! Error: Duplicate identifier 'Car1'
